@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>首页</title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/fastclick.js"></script>
+<script type="text/javascript" src="js/yxMobileSlider.js"></script>
+<script type="text/javascript">
+$(function(){
+	getInsideArr();
+	setHotAdressWidth();//设置热门景点滑动宽度
+	//图片在div中居中不变形
+	setImgCenter(); 
+});
+window.onresize = function(){
+	$(".focus").remove();
+	getInsideArr();
+	setHotAdressWidth();//设置热门景点滑动宽度
+};
+
+//设置热门景点滑动宽度
+function setHotAdressWidth(){
+	var hotAddressLiWidth=$(".hotAddressLi").width();
+	var hotAddressLiLength=$(".hotAddressLi").length;
+	var hotAddressUlwidth=hotAddressLiWidth*hotAddressLiLength*1.01;
+	$(".hotAddressUl").width(hotAddressUlwidth);
+	}
+/*获取id=bodyInside的宽度值*/
+function getInsideArr(){
+	var insideWidth=$("#bodyInside").width();
+	var insideHeight=insideWidth*0.5;
+	$(".slider").yxMobileSlider({width:insideWidth,height:insideHeight,during:5000})	}
+</script>
+</head>
+<body>
+<!--/********底部导航********/-->
+<div class="bottom">
+  	<div class="inside">
+		<ul class="bottomNav">
+			<li><a href="index.html"><div><img src="images/chuxing_h.png"/></div>出行</a></li>
+			<li><a href="indexStrategy.html"><div><img src="images/gonglue_n.png"/></div>攻略</a></li>
+			<li><a href="dynamic.html"><div><img src="images/dongtai_n.png"/></div>动态</a></li>
+			<li><a href="indexMy.html"><div><img src="images/wode_n.png"/></div>我的</a></li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+</div>
+
+<div class="body" style="">
+  <div class="inside" id="bodyInside">
+    <div class="bodyTop">
+      <div class="bodyTopCenter">接待游</div>
+    </div>
+    <!--效果html开始-->
+    <div class="slider">
+      <ul>
+        <li><a href="" target="_blank"><img src="images/fodder/scenery001.jpg" alt=""></a></li>
+        <li><a href="" target="_blank"><img src="images/fodder/scenery002.jpg" alt=""></a></li>
+        <li><a href="" target="_blank"><img src="images/fodder/scenery003.jpg" alt=""></a></li>
+      </ul>
+    </div>
+    <!--效果html结束-->
+    <div class="indexFunctionAll">
+      <ul>
+        <a href="releaseTravel.html">
+        <li class="indexFunctionList">
+          <div class="img"> <img src="images/fabu_icon.png"> </div>
+          <div class="text"> 发布出行 </div>
+        </li>
+        </a> <a href="tourGuideList.html">
+        <li class="indexFunctionList">
+          <div class="img"> <img src="images/zhaodaoyou.png"> </div>
+          <div class="text"> 找导游  </div>
+        </li>
+        </a> <a href="travelList.html">
+        <li class="indexFunctionList">
+          <div class="img"> <img src="images/jiedan_icon.png"> </div>
+          <div class="text"> 导游接单 </div>
+        </li>
+        </a> <a href="travelOrderList.html">
+        <li class="indexFunctionList">
+          <div class="img"> <img src="images/qingdan_icon.png"> </div>
+          <div class="text"> 出行清单</div>
+        </li>
+        </a>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="indexNav">
+      <div class="indexNavTag"> </div>
+      <div class="indexNavName"> 特色出行 </div>
+      <div class="indexNavMore"> </div>
+      <div class="clear"></div>
+    </div>
+    <div class="travelType">
+      <ul class="travelTypeUl">
+        <li class="travelTypeLi"> <a href="sceneryTravelList.html">
+          <div class="travelTypeDiv">
+            <div class="travelTypeImg imgCenterDiv"> <img class="imgCenter" src="images/fodder/scenery004.jpg"> </div>
+            <div class="travelTypeName"> 景点游 </div>
+          </div>
+          </a> </li>
+        <li class="travelTypeLi"> <a href="sceneryList.html">
+          <div class="travelTypeDiv">
+            <div class="travelTypeImg"> <img src="images/fodder/scenery005.jpg"> </div>
+            <div class="travelTypeName"> 乡村游 </div>
+          </div>
+          </a> </li>
+        <li class="travelTypeLi"> <a href="sceneryList.html">
+          <div class="travelTypeDiv">
+            <div class="travelTypeImg"> <img src="images/fodder/scenery006.jpg"> </div>
+            <div class="travelTypeName"> 海外游 </div>
+          </div>
+          </a> </li>
+        <li class="travelTypeLi"> <a href="sceneryList.html">
+          <div class="travelTypeDiv">
+            <div class="travelTypeImg"> <img src="images/fodder/scenery007.jpg"> </div>
+            <div class="travelTypeName"> 故事游 </div>
+          </div>
+          </a> </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="newTravel">
+      <div class="newTravelTitle"> 最新出行 </div>
+      <div class="newTravelContent">
+        <div class="travelPerson">
+          <div class="travelPersonIntro"><span class="travelPersonName">小苹果小苹果</span><span>发布了一条出行信息</span> </div>
+          <div class="travelPersonNumber">抢单人数：5人</div>
+          <div class="clear"></div>
+        </div>
+        <div class="travelAddressAndTime">
+          <div class="travelAddressImg"> <img class="travelIntroImg" src="images/tour.png"></div>
+          <div class="travelPersonalAddressName">目的地：</div>
+          <div class="travelPersonalAddress">杭州</div>
+          <div class="travelAddressImg"> <img class="travelIntroImg" src="images/tour.png"></div>
+          <div class="travelPersonalAddressName">出行时间：</div>
+          <div class="travelPersonalAddress">6-18至6-28</div>
+          <div class="travelIntroRefresh"><img class="travelIntroImg" src="images/tour.png"></div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="indexNav">
+      <div class="indexNavTag"> </div>
+      <div class="indexNavName"> 热门地点 </div>
+      <a href="#">
+      <div class="indexNavMore">更多&gt;&gt; </div>
+      </a> </div>
+    <div class="hotAddressAll">
+      <ul class="hotAddressUl">
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery008.jpg"> </div>
+            <div class="hotAddressName">西湖</div>
+          </div>
+        </li>
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery009.jpg"> </div>
+            <div class="hotAddressName">三亚</div>
+          </div>
+        </li>
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery003.jpg"> </div>
+            <div class="hotAddressName">北京</div>
+          </div>
+        </li>
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery001.jpg"> </div>
+            <div class="hotAddressName">重庆</div>
+          </div>
+        </li>
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery002.jpg"> </div>
+            <div class="hotAddressName">桂林</div>
+          </div>
+        </li>
+        <li class="hotAddressLi">
+          <div class="hotAddressDiv">
+            <div class="hotAddressImg"> <img src="images/fodder/scenery003.jpg"> </div>
+            <div class="hotAddressName">太湖</div>
+          </div>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="indexNav">
+      <div class="indexNavTag"> </div>
+      <div class="indexNavName"> 游记 </div>
+      <a href="notesList.html">
+      <div class="indexNavMore">更多&gt;&gt; </div>
+      </a> </div>
+    <div class="notesAll">
+      <ul class="notesUl">
+        <li class="notesLi">
+          <div class="notesDiv">
+            <div class="notesImg"> <img src="images/fodder/scenery004.jpg"> </div>
+            <div class="notesName">西湖一日游</div>
+            <div class="notesOther">
+              <div class="notesEvaluation">评价</div>
+              <div class="notesOtherNumber">1000</div>
+              <div class="notesEvaluation">评价</div>
+              <div class="notesOtherNumber">1000</div>
+              <div class="notesOtherTime">2016-06-01</div>
+            </div>
+          </div>
+        </li>
+        <li class="notesLi">
+          <div class="notesDiv">
+            <div class="notesImg"> <img src="images/fodder/scenery006.jpg"> </div>
+            <div class="notesName">泰国七日游</div>
+            <div class="notesOther">
+              <div class="notesEvaluation">评价</div>
+              <div class="notesOtherNumber">1000</div>
+              <div class="notesEvaluation">评价</div>
+              <div class="notesOtherNumber">1000</div>
+              <div class="notesOtherTime">2016-06-01</div>
+            </div>
+          </div>
+        </li>
+        <div class="clear"></div>
+      </ul>
+    </div>
+    <div class="height40"></div>
+  </div>
+</div>
+</body>
+</html>
